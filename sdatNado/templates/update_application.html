@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Редактирование заявки</title>
+</head>
+<body>
+    <h1>Редактировать заявку</h1>
+    <form method="POST">
+        <label for="status" >Статус:</label>
+        <select id="status" name="status" onchange="alert(this.value)" >
+            <option value="Номер забронирован" {% if application.status == 'Номер забронирован' %}selected{% endif %}>Номер забронирован</option>
+            <option value="Номер занят" {% if application.status == 'Номер занят' %}selected{% endif %}>Номер занят</option>
+            <option value="Клиент покинул номер" {% if application.status == 'Клиент покинул номер' %}selected{% endif %}>Клиент покинул номер</option>
+            <option value="Выселен" {% if application.status == 'Выселен' %}selected{% endif %}>Выселен</option>
+        </select><br><br>
+
+
+        <label for="responsible">Ответственный:</label>
+        <input type="text" id="responsible" name="responsible" value="{{ application.responsible }}"><br><br>
+
+        <label for="pozelaniya">Поженлания:</label>
+        <input type="text" id="pozelaniya" name="pozelaniya" value="{{ application.pozelaniya }}"><br><br> 
+
+
+        <input type="submit" value="Сохранить изменения">
+    </form>
+</body>
+
+</html>
+
+    

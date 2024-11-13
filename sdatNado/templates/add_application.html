@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Добавление заявки</title>
+
+</head>
+<body>
+    
+    <h1>Добавить заявку</h1>
+    <form method="POST">  
+
+        <label for="Adres_otelya">Адрес отеля:</label>  
+        <input type="text" id="Adres_otelya" name="Adres_otelya" required><br><br>
+
+        <label for="bidd_number">Номер заявки:</label>  
+        <input type="text" id="bidd_number" name="bidd_number" required><br><br>
+
+        <label for="apartment_number">Номер аппартаментов:</label>
+        <input type="text" id="apartment_number" name="apartment_number" required><br><br>
+
+        <label for="pozelaniya">Пожелания:</label>
+        <textarea id="pozelaniya" name="pozelaniya" required></textarea><br><br>
+
+        <label for="client_name">ФИО клиента:</label>
+        <input type="text" id="client_name" name="client_name" required><br><br>
+
+        <label for="phone_number">Номер телефона:</label>
+        <input type="tel" id="phone_number" name="phone_number" required><br><br>
+        <label for="status" >Статус:</label>
+        <select id="status" name="status" >
+            <option value="Номер забронирован" >Номер забронирован</option>
+            <option value="Номер занят">Номер занят</option>
+
+       <input type="submit" value="Добавить заявку">
+</select>
+        
+
+
+
+
+    

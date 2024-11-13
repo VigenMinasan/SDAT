@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Список гостей</title>
+</head>
+<table>
+    <thead>
+        <tr>
+            
+            <th>Номер заявки</th>
+            <th>Дата заселения</th>
+            <th>Номер аппартаментов</th>
+            <th>Пожелания</th>
+            <th>ФИО клиента</th>
+            <th>Номер телефона</th>
+            <th>Статус </th>
+
+        </tr>
+    </thead>
+    <tbody>
+        {% for application in applications %}
+        <tr>
+            <td>{{ application.bidd_number }}</td>
+            <td>{{ application.date_added }}</td>
+            <td>{{ application.apartment_number }}</td>
+            <td>{{ application.pozelaniya }}</td>
+            <td>{{ application.client_name }}</td>
+            <td>{{ application.phone_number }}</td>
+            <td>{{ application.status }}</td>
+            <td>
+                <a href="{{ url_for('update_application', application_id=application.id) }}">  
+                    Редактировать</a>
+            </td>
+        </tr>
+        {% endfor %}
+        <a href="{{ url_for('add_application') }}">Добавить заявку</a>  
+
+<form method="POST" action="/search">
+    <p><label for="search_id">Поиск заявки по номеру:</label>
+    <input type="text" id="search_id" name="search_id" required>
+    <input type="submit" value="Найти заявку"></p>
+<p><a href="{{ url_for('statistics') }}">Статистика</a>  </p>
+<h1> <h1>
+</form>
+</body>
+</html>
